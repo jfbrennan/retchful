@@ -13,6 +13,12 @@ It's really simple.
 
 All functions ultimately call fetch and return a Promise with the result of `response.json()`. Internally `response.ok` is checked and if it's not, then the Promise is rejected. 
 
+`options` is a pass-through with a few things to be aware of: 
+
+- `body` will be stringified for you
+- `method` will be overridden based on what's documented above
+- `params` is part of futch. This will be turned into a query string for you.
+
 **Examples**
 ```
 let url = 'https://jsonplaceholder.typicode.com/todos';
