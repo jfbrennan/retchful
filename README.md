@@ -27,16 +27,21 @@ Get, save, and delete ultimately call fetch and return a Promise with the value 
 let url = 'https://jsonplaceholder.typicode.com/todos';
 
 // Fetching
-futch.get(url).then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos
-futch.get(url, {id: '1'}).then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos/1
+futch.get(url)
+    .then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos
+futch.get(url, {id: '1'})
+    .then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos/1
 
 // Saving
-futch.save(url, {body: {title: 'Foo', body: 'Bar'}}).then(json => console.log(json)); => POST https://jsonplaceholder.typicode.com/todos
+futch.save(url, {body: {title: 'Foo', body: 'Bar'}})
+    .then(json => console.log(json)); => POST https://jsonplaceholder.typicode.com/todos
 
-futch.save(url, {body: {userId: 1, title: 'Foo', body: 'Baz'}, idAttribute: 'userId'}).then(json => console.log(json)); => PUT https://jsonplaceholder.typicode.com/todos/1
+futch.save(url, {body: {userId: 1, title: 'Foo', body: 'Baz'}, idAttribute: 'userId'})
+    .then(json => console.log(json)); => PUT https://jsonplaceholder.typicode.com/todos/1
 
 // Deleting
-futch.delete(url, {id: '1'}).then(json => console.log(json)); => DELETE https://jsonplaceholder.typicode.com/todos/1
+futch.delete(url, {id: '1'})
+    .then(json => console.log(json)); => DELETE https://jsonplaceholder.typicode.com/todos/1
 
 ```
 
