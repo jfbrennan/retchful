@@ -3,14 +3,15 @@
 
 ## API
 
-`get(url[, options])` sends an HTTP "GET". Optionally attach query params by setting `params` in options.
+`get(url[, options])` - sends an HTTP "GET". Optionally attach query params by setting `params` in options.
 
-`save(url[, options])` sends an HTTP "POST" if there is no id. If there is, then it'll send a "PUT". If the id has a different name, just say what it is by setting the `idAttribute` in options.
+`save(url[, options])` - sends an HTTP "POST" if there is no id. If there is, then it'll send a "PUT". If the id has a different name, just say what it is by setting the `idAttribute` in options.
 
-`delete(url, {id})` sends an HTTP "DELETE". You must specify an id in options.
+`delete(url, {id})` - sends an HTTP "DELETE". You must specify an id in options.
 
-`url` a string. Do not include the id of the resource in the url, it will be taken from options.
-`options` is a pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
+`url` - a string. Do not include the id of the resource in the url, it will be taken from options.
+
+`options` - pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
 - `body` will be stringified for you
 - `method` will be set based on what's documented above
