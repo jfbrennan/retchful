@@ -13,7 +13,7 @@ It's really simple.
 
 All functions ultimately call `fetch` and return a Promise with the result of `response.json()`. Internally `response.ok` is checked first, and if its not, then the Promise is rejected. 
 
-Examples:
+**Examples**
 ```
 let url = 'https://jsonplaceholder.typicode.com/todos';
 
