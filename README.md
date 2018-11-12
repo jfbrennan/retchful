@@ -4,7 +4,7 @@
 ## API
 It's really simple.
 
-*get* `get(url[, options])` sends an HTTP "GET". Optionally attach query params by setting `params` in `options`.
+**get** `get(url[, options])` sends an HTTP "GET". Optionally attach query params by setting `params` in `options`.
 
 
 *save* `save(url[, options])` sends an HTTP "POST" if there is no id. If there is, then it'll send a "PUT". If the id has a different name, just say what it is by setting the `idAttribute` in `options`.
