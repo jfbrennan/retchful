@@ -1,5 +1,5 @@
 # futch
-`fetch`, but only for RESTful APIs serving JSON.
+`fetch` for talking to RESTful APIs in a sane way.
 
 ## API
 
