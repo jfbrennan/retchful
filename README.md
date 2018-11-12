@@ -28,23 +28,23 @@ let url = 'https://jsonplaceholder.typicode.com/todos';
 
 // Fetching all todos
 futch.get(url)
-    .then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos
+    .then(json => console.log(json)) // GET https://jsonplaceholder.typicode.com/todos
 
 // Fetching a todo
 futch.get(url, {id: '1'})
-    .then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos/1
+    .then(json => console.log(json)) // GET https://jsonplaceholder.typicode.com/todos/1
 
 // Saving a new todo
 futch.save(url, {body: {title: 'Foo', body: 'Bar'}})
-    .then(json => console.log(json)); => POST https://jsonplaceholder.typicode.com/todos
+    .then(json => console.log(json)) // POST https://jsonplaceholder.typicode.com/todos
 
 // Saving changes to a todo
 futch.save(url, {body: {todoId: '1', title: 'Foo', body: 'Baz'}, idAttribute: 'todoId'})
-    .then(json => console.log(json)); => PUT https://jsonplaceholder.typicode.com/todos/1
+    .then(json => console.log(json)) // PUT https://jsonplaceholder.typicode.com/todos/1
 
 // Deleting a todo
 futch.delete(url, {id: '1'})
-    .then(json => console.log(json)); => DELETE https://jsonplaceholder.typicode.com/todos/1
+    .then(json => console.log(json)) // DELETE https://jsonplaceholder.typicode.com/todos/1
 
 ```
 
