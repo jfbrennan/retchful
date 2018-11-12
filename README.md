@@ -26,20 +26,23 @@ Get, save, and delete ultimately call fetch and return a Promise with the value 
 ```
 let url = 'https://jsonplaceholder.typicode.com/todos';
 
-// Fetching
+// Fetching all todos
 futch.get(url)
     .then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos
+
+// Fetching a todo
 futch.get(url, {id: '1'})
     .then(json => console.log(json)); => GET https://jsonplaceholder.typicode.com/todos/1
 
-// Saving
+// Saving a new todo
 futch.save(url, {body: {title: 'Foo', body: 'Bar'}})
     .then(json => console.log(json)); => POST https://jsonplaceholder.typicode.com/todos
 
+// Saving changes to a todo
 futch.save(url, {body: {userId: 1, title: 'Foo', body: 'Baz'}, idAttribute: 'userId'})
     .then(json => console.log(json)); => PUT https://jsonplaceholder.typicode.com/todos/1
 
-// Deleting
+// Deleting a todo
 futch.delete(url, {id: '1'})
     .then(json => console.log(json)); => DELETE https://jsonplaceholder.typicode.com/todos/1
 
