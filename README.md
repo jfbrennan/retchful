@@ -11,7 +11,7 @@ It's really simple.
 
 `delete(url, {id})` sends an HTTP "DELETE".
 
-All functions ultimately call fetch and return a Promise with the result of `response.json()`. Internally `response.ok` is checked and if it's not, then the Promise is rejected. 
+All functions ultimately call fetch and return a Promise with the value of `response.json()`. Internally `response.ok` is checked and if it's not, then the Promise is rejected. 
 
 `options` is a pass-through of fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
