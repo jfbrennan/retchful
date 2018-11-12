@@ -3,32 +3,27 @@ window.futch = (function () {
         get: (url, options) => {
             options = options || {};
             options.method = 'GET';
-            if (options.id) url += `/${options.id}`;
             return makeRequest(url, options);
         },
 
         save: (url, options) => {
             options = options || {};
-            options.method = options.body[options.idAttribute || 'id'] ? 'PUT' : 'POST'; // If there's an id, then you are updating; otherwise creating.
+            options.id = options.body[options.idAttribute || 'id'];
+            options.method = options.id ? 'PUT' : 'POST';
             return makeRequest(url, options);
         },
 
         delete: (url, options) => {
             options = options || {};
             options.method = 'DELETE';
-            
-            if (!options.id) {
-                return Promise.reject();
-            } else {
-                url += `/${options.id}`;
-                return makeRequest(url, options);
-            }
+            if (!options.id) return Promise.reject('options.id is missing.');
+            return makeRequest(url, options);
         }
     };
 
     function makeRequest(url, options) {
+        if (options.id) url += `/${options.id}`;
         url = new URL(url);
-
         if (options.params) Object.keys(options.params).forEach(key => url.searchParams.append(key, options.params[key]));
         if (options.body) options.body = JSON.stringify(options.body);
         options.headers = {'Content-type': 'application/json; charset=UTF-8'};
