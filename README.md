@@ -14,10 +14,10 @@ All functions ultimately call fetch and return a Promise with the value of `resp
 `options` is a pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
 - `body` will be stringified for you
-- `method` will be overridden based on what's documented above
-- `params` is part of futch. This will be turned into a query string for you.
-- `idAttribute` is also part of futch. This is used to find the id of the object you're saving.
-- `id` if present, will be appended to the url. It's required by `delete`, used by `get` to fetch a single resource rather than all, and will turn a "POST" to a "PUT" when saving. 
+- `method` will be set based on what's documented above
+- `params` is unique to futch. This will be turned into a query string for you.
+- `idAttribute` is unique to futch. This is used to find the id of the object you're saving.
+- `id` is unique to futch. If present, will be appended to the url. It's required by `delete`, used by `get` to fetch a single resource rather than all, and will turn a "POST" to a "PUT" when saving. 
 
 **Examples**
 ```
