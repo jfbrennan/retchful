@@ -39,7 +39,7 @@ futch.save(url, {body: {title: 'Foo', body: 'Bar'}})
     .then(json => console.log(json)); => POST https://jsonplaceholder.typicode.com/todos
 
 // Saving changes to a todo
-futch.save(url, {body: {todoId: 1, title: 'Foo', body: 'Baz'}, idAttribute: 'todoId'})
+futch.save(url, {body: {todoId: '1', title: 'Foo', body: 'Baz'}, idAttribute: 'todoId'})
     .then(json => console.log(json)); => PUT https://jsonplaceholder.typicode.com/todos/1
 
 // Deleting a todo
