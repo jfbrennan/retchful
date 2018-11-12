@@ -1,24 +1,20 @@
 window.futch = (function () {
     return {
-
         get: (url, options) => {
             options = options || {};
             options.method = 'GET';
-
             return makeRequest(url, options);
         },
 
         save: (url, options) => {
             options = options || {};
             options.method = options.body[options.idAttribute || 'id'] ? 'PUT' : 'POST'; // If there's an id, then you are updating; otherwise creating.
-
             return makeRequest(url, options);
         },
 
         delete: (url, options) => {
             options = options || {};
             options.method = 'DELETE';
-
             return makeRequest(url, options);
         }
     };
