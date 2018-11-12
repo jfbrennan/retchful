@@ -19,7 +19,10 @@ Futch is `fetch` for talking to RESTful services. Futch has a more meaninful API
 - `idAttribute` (unique to futch) This is used to find the id of the object you're saving.
 - `id` (unique to futch) If present, will be appended to the url. It's required by `delete`, used by `get` to fetch a single resource rather than all, and will make `save` "PUT" instead of "POST". 
 
+**Notes**
 Get, save, and delete ultimately call fetch and return a Promise with the value of `response.json()`. Internally `response.ok` is checked and if it's not ok, then the Promise is rejected. 
+
+The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: 
 
 
 **Examples**
