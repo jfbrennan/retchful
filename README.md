@@ -23,7 +23,7 @@ Get, save, and delete ultimately call fetch and return a Promise with the value 
 
 
 **Examples**
-```
+```javascript
 let url = 'https://jsonplaceholder.typicode.com/todos';
 
 // Fetching all todos
