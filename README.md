@@ -1,5 +1,5 @@
 # futch
-Futch is `fetch` for talking to REST+JSON services. Futch has a more meaninful API, handles all the JSON stuff, sets sensible defaults, and just makes ajax great again. 
+Futch is `fetch` for talking to RESTful services. Futch has a more meaninful API, handles all the JSON stuff, sets sensible defaults, and just makes ajax great again. 
 
 ## API
 
