@@ -13,7 +13,7 @@ It's really simple.
 
 All functions ultimately call fetch and return a Promise with the result of `response.json()`. Internally `response.ok` is checked and if it's not, then the Promise is rejected. 
 
-`options` is a pass-through with a few things to be aware of: 
+`options` is a pass-through of fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
 - `body` will be stringified for you
 - `method` will be overridden based on what's documented above
