@@ -3,6 +3,7 @@ window.futch = (function () {
         get: (url, options) => {
             options = options || {};
             options.method = 'GET';
+            if (options.id) url += `/${options.id}`;
             return makeRequest(url, options);
         },
 
@@ -15,7 +16,13 @@ window.futch = (function () {
         delete: (url, options) => {
             options = options || {};
             options.method = 'DELETE';
-            return makeRequest(url, options);
+            
+            if (!options.id) {
+                return Promise.reject();
+            } else {
+                url += `/${options.id}`;
+                return makeRequest(url, options);
+            }
         }
     };
 
