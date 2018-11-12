@@ -19,10 +19,6 @@ window.futch = (function () {
             options = options || {};
             options.method = 'DELETE';
 
-            return this.req(url, options);
-        },
-
-        req: (url, options) => {
             return makeRequest(url, options);
         }
     };
