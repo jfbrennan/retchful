@@ -4,12 +4,12 @@
 ## API
 It's really simple.
 
-**get** `get(url[, options])` sends an HTTP "GET". Optionally attach query params by setting `params` in `options`.
+`get(url[, options])` sends an HTTP "GET". Optionally attach query params by setting `params` in `options`.
 
 
-**save** `save(url[, options])` sends an HTTP "POST" if there is no id. If there is, then it'll send a "PUT". If the id has a different name, just say what it is by setting the `idAttribute` in `options`.
+`save(url[, options])` sends an HTTP "POST" if there is no id. If there is, then it'll send a "PUT". If the id has a different name, just say what it is by setting the `idAttribute` in `options`.
 
-**delete** `delete(url[, options])` sends an HTTP "DELETE".
+`delete(url[, options])` sends an HTTP "DELETE".
 
 All functions ultimately call `fetch` and return a Promise with the result of `response.json()`. Internally `response.ok` is checked first, and if its not, then the Promise is rejected. 
 
