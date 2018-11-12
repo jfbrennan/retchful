@@ -38,4 +38,4 @@ futch.delete(url, {id: '1'}).then(json => console.log(json)); => DELETE https://
 ```
 
 ## Installation
-Just copy the 39 lines of source code and do whatever you need to do. It is ES6, so you'll probably want to transpile and it makes use of `fetch`, `Promise`, `URL`, and `URL#searchParams`, so you may want to polyfill. You should definitely minify and compress! CDN version coming.
+Just copy the 39 lines of source code and do whatever you need to do. It is ES6, so you'll probably want to transpile and it makes use of `fetch`, `Promise`, `URL`, and `URLSearchParams.append`, so you may want to polyfill. You should definitely minify and compress! CDN version coming.
