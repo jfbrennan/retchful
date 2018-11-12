@@ -9,7 +9,7 @@
 
 `delete(url, {id})` - sends an HTTP "DELETE". You must specify an id in options.
 
-`url` - a string. Do not include the id of the resource in the url, it will be taken from options.
+`url` - a string. Do not include the id of the resource in the url; it will be taken from options.
 
 `options` - pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
