@@ -1,5 +1,5 @@
 # futch
-Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) client for RESTful services. Futch offers a more meaningful API, handles all the JSON stuff, sets sensible defaults, and is less than half a kb. In short, it makes ajax great again ;)
+Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) client for RESTful services. Futch offers a more meaningful API, handles all the gotchas and JSON stuff, sets sensible defaults, and is less than half a kb. In short, it makes ajax great again ;)
 
 ## API
 
