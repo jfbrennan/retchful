@@ -1,11 +1,11 @@
 # futch
-Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) client for RESTful services. Futch offers a more meaningful API, handles all the gotchas and JSON stuff, sets sensible defaults, and is less than half a kb.
+Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) client for RESTful services. Futch offers a more meaningful API, adds a couple goodies, handles all the gotchas and JSON stuff, sets sensible defaults, and is _less than_ half a kb.
 
 ## API
 
-`get(url[, options])` Sends an HTTP "GET". Optionally attach query params by setting `params` in options. Get a specific resource by setting the `id` option.
+`get(url[, options])` Sends an HTTP "GET" for all resources. Get a specific resource by setting the `id` option. Optionally attach query params by setting `params` in options.
 
-`save(url[, options])` Sends an HTTP "POST" if there is no id. If there is and id, then it'll "PUT". If the id has a different name, say what it is by setting the `idAttribute` in options.
+`save(url[, options])` Sends an HTTP "POST" if there is no id. If there is and id, then it'll "PUT". If id has a different name, configure that using the `idAttribute` option.
 
 `delete(url, {id})` Sends an HTTP "DELETE". You must include the id option.
 
@@ -13,11 +13,11 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWork
 
 `options` Pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
-- `body` will be stringified for you
-- `method` will be set based on what's documented above
-- `params` (unique to futch) An object. Will be added as a query string. Primarily for `get`, but works with all.
-- `idAttribute` (unique to futch) A string. Used by save to get the id from `body` in case it's not called "id".
-- `id` (unique to futch) A number or string. If present, will be appended to the url. Required by delete and used by get to fetch a single resource rather than all. Save ignores this and instead looks in `options.body` for the id. 
+- `body` is stringified for you.
+- `method` is set based on what's documented above.
+- `params` (futch only) Key-value pair. Converted and added as a query string. Primarily for `get`, but works with all.
+- `idAttribute` (futch only) A string. Used by save to get id from `body` in case it's not called "id".
+- `id` (futch only) A number or string. If present, will be appended to the url. Required by delete and used by get to fetch a single resource rather than all. Save ignores this and instead looks in `options.body` for the id. 
 
 **Notes**
 
