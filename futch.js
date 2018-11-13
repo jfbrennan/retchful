@@ -26,6 +26,9 @@ window.futch = (function () {
         url = new URL(url);
         if (options.params) Object.keys(options.params).forEach(key => url.searchParams.append(key, options.params[key]));
         if (options.body) options.body = JSON.stringify(options.body);
+        
+        // Set init defaults, override when provided
+        options.credentials = options.credentials || 'include';
         options.headers = {'Content-type': 'application/json; charset=UTF-8'};
 
         return fetch(url.toString(), options).then(res => {
