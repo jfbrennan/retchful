@@ -15,7 +15,7 @@ Futch is `fetch` for talking to RESTful services. Futch has a more meaninful API
 
 - `body` will be stringified for you
 - `method` will be set based on what's documented above
-- `params` (unique to futch) This will be turned into a query string for you. Primarily for `get`, but available to all.
+- `params` (unique to futch) This will be added as a query string. Primarily for `get`, but works with all.
 - `idAttribute` (unique to futch) This is used to find the id of the object you're saving.
 - `id` (unique to futch) If present, will be appended to the url. It's required by `delete`, used by `get` to fetch a single resource rather than all, and will make `save` "PUT" instead of "POST". 
 
