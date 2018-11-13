@@ -1,11 +1,11 @@
 # futch
-Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) client for RESTful services. Futch offers a more meaningful API, handles all the gotchas and JSON stuff, sets sensible defaults, and is less than half a kb. In short, it makes ajax great again ;)
+Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) client for RESTful services. Futch offers a more meaningful API, handles all the gotchas and JSON stuff, sets sensible defaults, and is less than half a kb.
 
 ## API
 
-`get(url[, options])` - sends an HTTP "GET". Optionally attach query params by setting `params` in options. Get a specific resource by passing the id option.
+`get(url[, options])` - sends an HTTP "GET". Optionally attach query params by setting `params` in options. Get a specific resource by setting the `id` option.
 
-`save(url[, options])` - sends an HTTP "POST" if there is no id. If there is, then it'll send a "PUT". If the id has a different name, just say what it is by setting the `idAttribute` in options.
+`save(url[, options])` - sends an HTTP "POST" if there is no id. If there is and id, then it'll "PUT". If the id has a different name, say what it is by setting the `idAttribute` in options.
 
 `delete(url, {id})` - sends an HTTP "DELETE". You must include the id option.
 
@@ -23,7 +23,7 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWork
 
 Get, save, and delete ultimately call fetch and return a Promise with the value of `response.json()`. Internally `response.ok` is checked. If not ok the Promise is rejected. 
 
-The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: https://github.com/jfbrennan/futch/blob/master/futch.js#L30
+The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: [https://github.com/jfbrennan/futch/blob/master/futch.js#L30](https://github.com/jfbrennan/futch/blob/master/futch.js#L30)
 
 
 **Examples**
