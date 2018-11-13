@@ -53,7 +53,9 @@ futch.delete(url, {id: '1'})
 ```
 
 ## Installation
-Just [copy futch.js](https://raw.githubusercontent.com/jfbrennan/futch/master/futch.js) and do whatever you need to do. It is ES6, so you'll probably want to transpile and it makes use of [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL), and [URLSearchParams.append](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/append), so you may want to polyfill. You should definitely minify and compress! CDN version coming.
+In the spirit of the web, just [copy futch.js](https://raw.githubusercontent.com/jfbrennan/futch/master/futch.js) and do whatever you need to do. Source code is in ES6, so you'll probably want to transpile it. Also makes use of [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL), and [URLSearchParams.append](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/append), so you may want to polyfill. 
+
+Minified CDN version is coming. NPM version is meh. 
 
 ## Credits
 Fetch is a low level API, so it's an ugly experience if used directly. I took some inspiration from [Backbone](http://backbonejs.org) which imo is one of the most developer-friendly libraries ever. It's still the best when working with a RESTful API, so futch attempts to give you some of that goodness. 
