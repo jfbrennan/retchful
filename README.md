@@ -3,25 +3,25 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWork
 
 ## API
 
-`get(url[, options])` - sends an HTTP "GET". Optionally attach query params by setting `params` in options. Get a specific resource by setting the `id` option.
+`get(url[, options])` Sends an HTTP "GET". Optionally attach query params by setting `params` in options. Get a specific resource by setting the `id` option.
 
-`save(url[, options])` - sends an HTTP "POST" if there is no id. If there is and id, then it'll "PUT". If the id has a different name, say what it is by setting the `idAttribute` in options.
+`save(url[, options])` Sends an HTTP "POST" if there is no id. If there is and id, then it'll "PUT". If the id has a different name, say what it is by setting the `idAttribute` in options.
 
-`delete(url, {id})` - sends an HTTP "DELETE". You must include the id option.
+`delete(url, {id})` Sends an HTTP "DELETE". You must include the id option.
 
-`url` - a string. Do not include the id of the resource in the url; it will be taken from options.
+`url` A string. Do not include the id of the resource; it will be taken from options.
 
-`options` - pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
+`options` Pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
 - `body` will be stringified for you
 - `method` will be set based on what's documented above
-- `params` (unique to futch) an object. Will be added as a query string. Primarily for `get`, but works with all.
-- `idAttribute` (unique to futch) a string. Used by save to get the id from `body` in case it's not called "id".
-- `id` (unique to futch) a number or string. If present, will be appended to the url. It's required by delete and used by get to fetch a single resource rather than all. Save ignores this and instead looks in `options.body` for an id. 
+- `params` (unique to futch) An object. Will be added as a query string. Primarily for `get`, but works with all.
+- `idAttribute` (unique to futch) A string. Used by save to get the id from `body` in case it's not called "id".
+- `id` (unique to futch) A number or string. If present, will be appended to the url. Required by delete and used by get to fetch a single resource rather than all. Save ignores this and instead looks in `options.body` for the id. 
 
 **Notes**
 
-Get, save, and delete ultimately call fetch and return a Promise with the value of `response.json()`. Internally `response.ok` is checked. If not ok the Promise is rejected. 
+Get, save, and delete ultimately call fetch and return a Promise with the value of `response.json()`. Internally `response.ok` is checked for you and if not ok the Promise is rejected. 
 
 The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: [https://github.com/jfbrennan/futch/blob/master/futch.js#L30](https://github.com/jfbrennan/futch/blob/master/futch.js#L30)
 
@@ -34,7 +34,7 @@ let url = 'https://jsonplaceholder.typicode.com/todos';
 futch.get(url)
     .then(json => console.log(json)) // GET https://jsonplaceholder.typicode.com/todos
 
-// Fetching a todo
+// Fetching a specific todo
 futch.get(url, {id: '1'})
     .then(json => console.log(json)) // GET https://jsonplaceholder.typicode.com/todos/1
 
@@ -44,6 +44,10 @@ futch.save(url, {body: {title: 'Foo', body: 'Bar'}})
 
 // Saving changes to a todo
 futch.save(url, {body: {id: '1', title: 'Foo', body: 'Baz'}})
+    .then(json => console.log(json)) // PUT https://jsonplaceholder.typicode.com/todos/1
+
+// Saving changes to todo when id is not named "id"
+futch.save(url, {idAttribute: 'todo_id', body: {todo_id: '1', title: 'Foo', body: 'Baz'}})
     .then(json => console.log(json)) // PUT https://jsonplaceholder.typicode.com/todos/1
 
 // Deleting a todo
