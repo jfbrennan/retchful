@@ -3,11 +3,11 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWork
 
 ## API
 
-`get(url[, options])` - sends an HTTP "GET". Optionally attach query params by setting `params` in options.
+`get(url[, options])` - sends an HTTP "GET". Optionally attach query params by setting `params` in options. Get a specific resource by passing the id option.
 
 `save(url[, options])` - sends an HTTP "POST" if there is no id. If there is, then it'll send a "PUT". If the id has a different name, just say what it is by setting the `idAttribute` in options.
 
-`delete(url, {id})` - sends an HTTP "DELETE". You must specify an id in options.
+`delete(url, {id})` - sends an HTTP "DELETE". You must include the id option.
 
 `url` - a string. Do not include the id of the resource in the url; it will be taken from options.
 
