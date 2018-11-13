@@ -22,7 +22,7 @@ Futch is `fetch` for talking to RESTful services. Futch has a more meaninful API
 **Notes**
 Get, save, and delete ultimately call fetch and return a Promise with the value of `response.json()`. Internally `response.ok` is checked and if it's not ok, then the Promise is rejected. 
 
-The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: 
+The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: https://github.com/jfbrennan/futch/blob/838bd486a64935434c30e0e7bb8597d00b5d02bc/futch.js#L30
 
 
 **Examples**
