@@ -9,13 +9,13 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWork
 
 `futch.delete(url, {id})` Sends an HTTP "DELETE". You must include the id option.
 
-`url` A string. Do not include the id of the resource; it will be taken from options.
+`url` A string. Do not include the id of the resource; it will be taken from options. Ending in `/` is okay.
 
 `options` Pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
 - `body` is stringified for you.
 - `method` is set based on what's documented above.
-- `params` (futch only) Key-value pair. Converted and added as a query string. Primarily for `get`, but works with all.
+- `params` (futch only) Key-value object. Added non-destructively as a query string. Primarily for `get`, but works with all.
 - `idAttribute` (futch only) A string. Used by save to get id from `body` in case it's not called "id".
 - `id` (futch only) A number or string. If present, will be appended to the url. Required by delete and used by get to fetch a single resource rather than all. Save ignores this and instead looks in `options.body` for the id. 
 
