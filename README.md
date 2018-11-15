@@ -5,11 +5,11 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWork
 
 `futch.get(url[, options])` Sends an HTTP "GET" for all resources. Get a specific resource by setting the `id` option. Optionally attach query params by setting `params` in options.
 
-`futch.save(url[, options])` Sends an HTTP "POST" if there is no id. If there is and id, then it'll "PUT". If id has a different name, configure that using the `idAttribute` option.
+`futch.save(url[, options])` Sends an HTTP "POST" if there is no id. If there is an id, then it'll "PUT". If id has a different name, configure that using the `idAttribute` option.
 
 `futch.delete(url, {id})` Sends an HTTP "DELETE". You must include the id option.
 
-`url` A string. Do not include the id of the resource; it will be taken from options. Ending in `/` is okay.
+`url` A string. Do not include the id of the resource; it will be taken from options. Ending with or without `/` is okay.
 
 `options` Pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) with a few things to be aware of: 
 
