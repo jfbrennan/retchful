@@ -32,27 +32,27 @@ let url = 'https://jsonplaceholder.typicode.com/todos';
 
 // Fetching all todos
 futch.get(url)
-    .then(json => console.log(json)) // GET https://jsonplaceholder.typicode.com/todos
+    .then(data => console.log(data)) // GET https://jsonplaceholder.typicode.com/todos
 
 // Fetching a specific todo
 futch.get(url, {id: '1'})
-    .then(json => console.log(json)) // GET https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) // GET https://jsonplaceholder.typicode.com/todos/1
 
 // Saving a new todo
 futch.save(url, {body: {title: 'Foo', body: 'Bar'}})
-    .then(json => console.log(json)) // POST https://jsonplaceholder.typicode.com/todos
+    .then(data => console.log(data)) // POST https://jsonplaceholder.typicode.com/todos
 
 // Saving changes to a todo
 futch.save(url, {body: {id: '1', title: 'Foo', body: 'Baz'}})
-    .then(json => console.log(json)) // PUT https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) // PUT https://jsonplaceholder.typicode.com/todos/1
 
 // Saving changes to todo when id is not named "id"
 futch.save(url, {idAttribute: 'todo_id', body: {todo_id: '1', title: 'Foo', body: 'Baz'}})
-    .then(json => console.log(json)) // PUT https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) // PUT https://jsonplaceholder.typicode.com/todos/1
 
 // Deleting a todo
 futch.delete(url, {id: '1'})
-    .then(json => console.log(json)) // DELETE https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) // DELETE https://jsonplaceholder.typicode.com/todos/1
 
 ```
 
