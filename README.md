@@ -23,7 +23,7 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWork
 
 Get, save, and delete ultimately call fetch and returns the Promise from `response.json()`. Internally `response.ok` is checked for you and if not ok the Promise is rejected. 
 
-The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: [https://github.com/jfbrennan/futch/blob/master/futch.js#L33](https://github.com/jfbrennan/futch/blob/master/futch.js#L33)
+The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: [https://github.com/jfbrennan/futch/blob/master/futch-0.0.9.js#L33](https://github.com/jfbrennan/futch/blob/master/futch-0.0.9.js#L33)
 
 
 **Examples**
