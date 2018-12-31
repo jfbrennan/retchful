@@ -70,4 +70,4 @@ Note that source code is in ES6, so you'll probably want to transpile it. Also m
 Not interested, but contributions would be considered.
 
 ## Credits
-Fetch is a low level API, so it's an ugly experience if used directly. I took some inspiration from [Backbone](http://backbonejs.org) which imo is one of the most developer-friendly libraries ever. It's still the best when working with a RESTful API, so futch attempts to give you some of that goodness. 
+Fetch is a low level API, so it gets ugly when used directly. I took some inspiration from [Backbone](http://backbonejs.org) which imo is one of the most developer-friendly libraries ever. It's still the best when working with a RESTful API, so futch attempts to give you some of that goodness. 
