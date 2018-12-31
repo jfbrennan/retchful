@@ -31,28 +31,34 @@ The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/
 let url = 'https://jsonplaceholder.typicode.com/todos';
 
 // Fetching all todos
+// GET https://jsonplaceholder.typicode.com/todos
 futch.get(url)
-    .then(data => console.log(data)) // GET https://jsonplaceholder.typicode.com/todos
+    .then(data => console.log(data)) 
 
 // Fetching a specific todo
+// GET https://jsonplaceholder.typicode.com/todos/1
 futch.get(url, {id: '1'})
-    .then(data => console.log(data)) // GET https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) 
 
 // Saving a new todo
+// POST https://jsonplaceholder.typicode.com/todos
 futch.save(url, {body: {title: 'Foo', body: 'Bar'}})
-    .then(data => console.log(data)) // POST https://jsonplaceholder.typicode.com/todos
+    .then(data => console.log(data)) 
 
 // Saving changes to a todo
+// PUT https://jsonplaceholder.typicode.com/todos/1
 futch.save(url, {body: {id: '1', title: 'Foo', body: 'Baz'}})
-    .then(data => console.log(data)) // PUT https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) 
 
 // Saving changes to todo when id is not named "id"
+// PUT https://jsonplaceholder.typicode.com/todos/1
 futch.save(url, {idAttribute: 'todo_id', body: {todo_id: '1', title: 'Foo', body: 'Baz'}})
-    .then(data => console.log(data)) // PUT https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) 
 
 // Deleting a todo
+// DELETE https://jsonplaceholder.typicode.com/todos/1
 futch.delete(url, {id: '1'})
-    .then(data => console.log(data)) // DELETE https://jsonplaceholder.typicode.com/todos/1
+    .then(data => console.log(data)) 
 
 ```
 
