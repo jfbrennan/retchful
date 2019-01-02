@@ -1,5 +1,5 @@
 # futch
-Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) client for RESTful services. Futch offers a more meaningful API, adds a couple goodies, handles all the gotchas and JSON stuff, sets sensible defaults, and is _less than_ half a kb.
+Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) client for RESTful services. Futch offers a more meaningful API, adds a couple goodies, handles all the gotchas and JSON stuff, sets sensible defaults, and is _less than_ half a kb.
 
 ## API
 
