@@ -16,8 +16,8 @@ Futch is a [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) c
 - `body` is stringified for you.
 - `method` is set based on what's documented above.
 - `params` (futch only) Key-value object. Added non-destructively as a query string. Primarily for `get`, but works with all.
-- `idAttribute` (futch only) A string. Used by save to get id from `body` in case it's not called "id".
 - `id` (futch only) A number or string. If present, will be appended to the url. Required by delete and used by get to fetch a single resource rather than all. Save ignores this and instead looks in `options.body` for the id. 
+- `idAttribute` (futch only) A string. Used by save to get id from `body` in case it's not called "id".
 
 **Notes**
 
