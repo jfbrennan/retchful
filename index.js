@@ -8,7 +8,7 @@ window.futch = (function () {
 
         save: (url, options) => {
             options = options || {};
-            options.id = options.body[options.idAttribute || 'id'];
+            options.id = options.body[options.altId || 'id'];
             options.method = options.id ? 'PUT' : 'POST';
             return makeRequest(url, options);
         },
@@ -25,9 +25,9 @@ window.futch = (function () {
         // Some url work
         url = new URL(url);
         if (options.id) url.pathname += (url.pathname.endsWith('/') ? '' : '/') + options.id;
-        if (options.params) Object.keys(options.params).forEach(key => url.searchParams.append(key, options.params[key]));
+        if (options.query) Object.keys(options.query).forEach(key => url.searchParams.append(key, options.query[key]));
 
-        // You're welcome
+        // Stringify body
         if (options.body) options.body = JSON.stringify(options.body);
 
         // Set init defaults, override if provided
