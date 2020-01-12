@@ -9,7 +9,7 @@ Futch is a 0.4kb abstraction of [fetch](https://developer.mozilla.org/en-US/docs
 
 `futch.delete(url, {id})` Sends an HTTP `DELETE`. You must include the id option.
 
-`url` A string. Do not include the id of the resource; it will be taken from options. Ending with or without `/` is okay.
+`url` A string. Do not include the id of the resource; it will be taken from `options`. Ending with or without "/" is okay.
 
 `options` Pass-through to fetch's [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) arg with a few things to be aware of: 
 
