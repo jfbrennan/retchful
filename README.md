@@ -76,4 +76,4 @@ Note that retch makes use of [fetch](https://developer.mozilla.org/en-US/docs/We
 Note that retch makes use of fetch, which needs to be installed for Node. The [node-fetch](https://www.npmjs.com/package/node-fetch) module is recommended.
 
 ## Credits
-Fetch is a low level API, so it gets ugly when used directly. I took some inspiration from [Backbone](http://backbonejs.org) which imo is one of the most developer-friendly libraries ever. It's still the best when working with lots of a RESTful APIs, so futch attempts to give you some of that goodness. 
+Fetch is a low level API, so it gets ugly when used directly. I took some inspiration from [Backbone](http://backbonejs.org) which imo is one of the most developer-friendly libraries ever. It's still the best when working with lots of a RESTful APIs, so retch attempts to give you some of that goodness. 
