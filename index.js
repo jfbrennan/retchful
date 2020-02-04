@@ -1,4 +1,4 @@
-window.futch = (function () {
+window.retch = (function () {
     return {
         get: (url, options) => {
             options = options || {};
