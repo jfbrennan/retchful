@@ -1,13 +1,12 @@
 {
-  "name": "futch",
-  "description": "Futch is a 0.4kb abstraction of fetch that makes RESTful requests more fun!",
+  "name": "retch",
+  "description": "Retch is a 0.4kb abstraction of fetch that makes RESTful requests more fun!",
   "version": "0.0.1-alpha",
-  "homepage": "https://futch.js.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jfbrennan/futch"
+    "url": "https://github.com/jfbrennan/retch"
   },
-  "bugs": "https://github.com/jfbrennan/futch/issues",
+  "bugs": "https://github.com/jfbrennan/retch/issues",
   "files": [
     "/dist"
   ],
