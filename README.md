@@ -1,5 +1,5 @@
 # retch
-Retch is a 0.4kb abstraction of [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that makes RESTful requests more fun! 
+Retch is a 0.4kb abstraction of [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that makes doing RESTful requests enjoyable! 
 
 ## API
 
