@@ -45,7 +45,7 @@ retch.get(url, {id: '1'})
 retch.save(url, {body: {title: 'Foo', body: 'Bar'}})
     .then(data => console.log(data)) 
 
-// Saving changes to a todo
+// Saving changes to an existing todo
 // PUT https://jsonplaceholder.typicode.com/todos/1
 retch.save(url, {body: {id: '1', title: 'Foo', body: 'Baz'}})
     .then(data => console.log(data)) 
