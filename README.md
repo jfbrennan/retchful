@@ -1,5 +1,5 @@
-# retch
-Retch is a 0.4kb abstraction of [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) that makes doing RESTful requests enjoyable! 
+# RETCHful
+RETCHful is three simple functions that make doing REST calls more reliable and enjoyable than using `fetch` directly. It works on both client and server. 
 
 ## API
 
@@ -28,7 +28,7 @@ The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/
 
 **Examples**
 ```javascript
-let url = 'https://jsonplaceholder.typicode.com/todos';
+const url = 'https://jsonplaceholder.typicode.com/todos';
 
 // Fetching all todos
 // GET https://jsonplaceholder.typicode.com/todos

@@ -1,4 +1,18 @@
-window.retch = (function () {
+(function(factory) {
+    // Establish the root object (`self` instead of `window` in case retch is used in a WebWorker).
+    const root = typeof self == 'object' && self.self === self && self ||
+      typeof global == 'object' && global.global === global && global;
+
+    // Node/CommonJS module
+    if (typeof exports !== 'undefined') {
+        factory(root, exports);
+    }
+    // or `retch` global in the browser
+    else {
+        root.retch = factory(root, {});
+    }
+
+})(function(root, retch) {
     return {
         get: (url, options) => {
             options = options || {};
@@ -45,4 +59,4 @@ window.retch = (function () {
         })
     }
 
-})();
+});

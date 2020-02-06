@@ -1,12 +1,12 @@
 {
-  "name": "retch",
-  "description": "Retch is a 0.4kb abstraction of fetch that makes RESTful requests more fun!",
+  "name": "retchful",
+  "description": "RETCHful is three simple functions that make doing REST calls more reliable and enjoyable than using fetch directly.",
   "version": "0.0.1-alpha",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jfbrennan/retch"
+    "url": "https://github.com/jfbrennan/retchful"
   },
-  "bugs": "https://github.com/jfbrennan/retch/issues",
+  "bugs": "https://github.com/jfbrennan/retchful/issues",
   "files": [
     "/dist"
   ],
