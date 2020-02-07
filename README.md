@@ -81,6 +81,7 @@ Note that RETCHful makes use of [fetch](https://developer.mozilla.org/en-US/docs
 **NPM** 
 
 `npm install retchful`
+
 `const retch = require('retchful')`
 
 Note that retch makes use of fetch, which needs to be installed for Node. The [node-fetch](https://www.npmjs.com/package/node-fetch) module is recommended.
