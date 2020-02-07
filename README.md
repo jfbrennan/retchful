@@ -29,35 +29,40 @@ The get, save, and delete functions ultimately call fetch and return the Promise
 // Require it server-side or use the `retch` global in the browser
 const retch = require('retchful');
 
-// Resource endpoint
+// Todos endpoint
 const url = 'https://jsonplaceholder.typicode.com/todos';
 
-// Fetching all todos
+// Fetch all todos
 // GET https://jsonplaceholder.typicode.com/todos
 retch.get(url)
     .then(data => console.log(data)) 
 
-// Fetching a specific todo
+// Fetch todos with query params
+// GET https://jsonplaceholder.typicode.com/todos?completed=false
+retch.get(url, {query: {completed: false}})
+    .then(data => console.log(data)) 
+
+// Fetch a specific todo
 // GET https://jsonplaceholder.typicode.com/todos/1
 retch.get(url, {id: '1'})
     .then(data => console.log(data)) 
 
-// Saving a new todo
+// Save a new todo
 // POST https://jsonplaceholder.typicode.com/todos
 retch.save(url, {body: {title: 'Foo', body: 'Bar'}})
     .then(data => console.log(data)) 
 
-// Saving changes to an existing todo
+// Save changes to an existing todo
 // PUT https://jsonplaceholder.typicode.com/todos/1
 retch.save(url, {body: {id: '1', title: 'Foo', body: 'Baz'}})
     .then(data => console.log(data)) 
 
-// Saving changes to todo when id is not named "id"
+// Save changes to todo when id is not named "id"
 // PUT https://jsonplaceholder.typicode.com/todos/1
 retch.save(url, {altId: 'todo_id', body: {todo_id: '1', title: 'Foo', body: 'Baz'}})
     .then(data => console.log(data)) 
 
-// Deleting a todo
+// Delete a todo
 // DELETE https://jsonplaceholder.typicode.com/todos/1
 retch.delete(url, {id: '1'})
     .then(data => console.log(data)) 
@@ -67,7 +72,7 @@ retch.delete(url, {id: '1'})
 ## Installation
 **CDN**
 
-`https://unpkg.com/retch@0.0.2-alpha/dist/min.js`
+`https://unpkg.com/retchful@1.0.0-beta/dist/min.js`
 
 Then just use the global `retch.get|save|delete` functions. Too easy. 
 
