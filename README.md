@@ -15,19 +15,21 @@ RETCHful is three simple functions that make doing REST calls more reliable and 
 
 - `body` is stringified for you.
 - `method` is set based on the function used (see above).
-- `query` (retch only) Key-value object added non-destructively to the url as a query string. Primarily for `get`, but works with all.
-- `id` (retch only) A number or string. If present, will be appended to `url`. Required by `delete` and used by `get` to fetch a single resource rather than all. `save` ignores this and instead looks at `body` for the id (see `altId`). 
-- `altId` (retch only) Specify an alternative name for the id property of `body`. Save uses this name or defaults to `body.id`.
+- `query` (RETCHful only) Key-value object added non-destructively to `url` as a query string. Primarily for `get`, but works with all.
+- `id` (RETCHful only) A number or string. If present, will be appended to `url`. Required by `delete` and used by `get` to fetch a single resource rather than all. `save` ignores this and instead looks at `body` for the id of the resource (see `altId` for more info). 
+- `altId` (RETCHful only) Specify an alternative name for the id property of `body`. Save uses this name or defaults to `body.id`.
 
 **Notes**
 
-Get, save, and delete ultimately call fetch and returns the Promise from `response.json()`. Internally `response.ok` is checked for you and if not ok the Promise is rejected. 
-
-The default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: [https://github.com/jfbrennan/retch/blob/master/index.js#L34](https://github.com/jfbrennan/retch/blob/master/index.js#L34)
+The get, save, and delete functions ultimately call fetch and return the Promise from `response.json()`. Internally `response.ok` is checked for you and if not ok the Promise is rejected. Also, the default values used for [init](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch#Parameters) can be seen here: [https://github.com/jfbrennan/retch/blob/master/index.js#L34](https://github.com/jfbrennan/retch/blob/master/index.js#L34)
 
 
 **Examples**
 ```javascript
+// Require it server-side or use the `retch` global in the browser
+const retch = require('retchful');
+
+// Resource endpoint
 const url = 'https://jsonplaceholder.typicode.com/todos';
 
 // Fetching all todos
@@ -67,11 +69,13 @@ retch.delete(url, {id: '1'})
 
 `https://unpkg.com/retch@0.0.2-alpha/dist/min.js`
 
-Note that retch makes use of [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL), and [URLSearchParams.append](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/append), so you may need to polyfill. 
+Then just use the global `retch.get|save|delete` functions. Too easy. 
+
+Note that RETCHful makes use of [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL), and [URLSearchParams.append](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams/append), so you may need to polyfill for older browsers. The excellent [polyfill.io](https://polyfill.io/v3/) service is a really smart way to go. 
 
 **NPM** 
 
-`npm install retch`
+`npm install retchful`
 
 Note that retch makes use of fetch, which needs to be installed for Node. The [node-fetch](https://www.npmjs.com/package/node-fetch) module is recommended.
 

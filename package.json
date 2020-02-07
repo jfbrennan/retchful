@@ -1,7 +1,7 @@
 {
   "name": "retchful",
   "description": "RETCHful is three simple functions that make doing REST calls more reliable and enjoyable than using fetch directly.",
-  "version": "0.0.1-alpha",
+  "version": "0.0.2-alpha",
   "repository": {
     "type": "git",
     "url": "https://github.com/jfbrennan/retchful"
