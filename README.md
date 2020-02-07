@@ -1,5 +1,5 @@
 # RETCHful
-RETCHful is three simple functions that make doing REST calls more reliable and enjoyable than using `fetch` directly. It works on both client and server. 
+RETCHful is three simple functions that make doing RESTful calls more reliable and enjoyable than using `fetch` directly. It works on both client and server. 
 
 ## API
 
